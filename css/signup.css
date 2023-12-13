@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(217, 217, 217);
+}
+
+.all_container {
+    width: 30%;
+    height: 80vh;
+    background-color: rgb(37, 37, 37);
+    position: absolute;
+    left: 35%;
+    top: 9%;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    box-shadow: 0 4px 8px 0 rgba(107, 107, 107, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.all_container p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: white;
+}
+
+.form {
+    width: 84%;
+    height: 55vh;
+    /* background-color: red; */
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+.inputbox {
+    position: relative;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.inputbox input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 10px 0 5px;
+    color: white;
+}
+
+.inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 10px 0 5px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    pointer-events: none;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+    color: #2196f3;
+    transform: translateY(-16px);
+    font-size: 0.70em;
+}
+
+.inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 42px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.inputbox i::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,#ff1b69,#ff0,#2196f3,#9c27b0,#ff1b69);
+    animation: animate 2s linear infinite;
+    transition: 0.5s;
+}
+
+.inputbox input:valid ~ i::before,
+.inputbox input:focus ~ i::before {
+    left: 0;
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+.btn {
+    width: 50%;
+    border-radius: 30px;
+    position: relative;
+    left: 25%;
+    /* top: 5px; */
+}
+
+.p p {
+    margin-top: 30px;
+    font-size: 1.09em;
+}
+
+.p p a {
+    text-decoration: none;
+}
+
+.message {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30%;
+}
+
+.message .success {
+    font-size: 18px;
+    position: absolute;
+    left: 32px;
+    top: -10px;
+    animation: button .3s linear;
+    display: none;
+}
+
+.message .danger {
+    font-size: 18px;
+    position: absolute;
+    left: 32px;
+    top: -10px;
+    animation: button .3s linear;
+    display: none;
+}
+
+@keyframes buttons {
+    0% {
+        transform: scale(0.1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
